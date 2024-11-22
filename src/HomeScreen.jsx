@@ -12,7 +12,7 @@ function HomeScreen() {
         <div className="slider">
           <ImgSlide />
         </div>
-        <div className="info secondary">
+        <div className="info-block secondary">
           <h1>What we do</h1>
           <p>
             At FitFusion, we believe that fitness is for everyone. Our unique

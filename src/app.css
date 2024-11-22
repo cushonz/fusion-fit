@@ -1,6 +1,7 @@
 /* Basic styling for the navigation bar */
 nav {
-  background-color: #333; /* Dark background color */
+  background: rgb(56,60,85);
+background: linear-gradient(0deg, rgba(56,60,85,1) 0%, rgba(33,35,41,1) 100%);
   padding: 10px 20px; /* Add some padding around the links */
   border-radius: 5px; /* Slightly round the corners */
   color: white;

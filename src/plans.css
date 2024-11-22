@@ -1,6 +1,4 @@
-.primary {
-  background-color: #002855;
-}
+
 
 .main-container {
   display: grid;
@@ -19,7 +17,7 @@
   grid-template-rows: 1fr; /* Two rows, second row smaller */
   border-radius: 1rem; /* Rounded corners */
   margin: 10px 0; /* Vertical spacing */
-  background-color: #333; /* Background color */
+
   width: 100%; /* Ensure full width of grid cell */
   gap: 10px;
   padding: 10px;
@@ -28,19 +26,22 @@
 .plan {
   display: flex;
   flex-direction: column; /* Stack children vertically */
-  background-color: grey;
+  background: rgb(73,77,94);
+  background: radial-gradient(circle, rgba(73,77,94,1) 0%, rgba(41,45,64,1) 70%);
   padding: 1rem;
   justify-content: flex-start; /* Align items at the top initially */
   align-items: center;
   border-radius: 1rem;
   height: 100%; /* Ensure plans have equal height */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  opacity: 0; /* Hidden initially */
+  animation: fallIn 0.5s ease-out forwards;
 }
 
-.plan:hover {
-  transform: scale(1.05); /* Slightly enlarges the plan container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow for emphasis */
+.plan ul{
+  margin-top: 10px;
 }
+
 .plan img {
   width: 100%; /* Makes the image fill the available width */
   height: auto; /* Maintains the aspect ratio */
@@ -59,3 +60,15 @@
   width: 100%; /* Makes the Button fill the width of the button-box */
   text-align: center; /* Centers the text inside the button */
 }
+
+@keyframes fallIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
