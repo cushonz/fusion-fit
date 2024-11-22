@@ -1,0 +1,21 @@
+/* Basic styling for the navigation bar */
+nav {
+  background-color: #333; /* Dark background color */
+  padding: 10px 20px; /* Add some padding around the links */
+  border-radius: 5px; /* Slightly round the corners */
+  color: white;
+}
+
+/* Styling for the links */
+nav a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Increase font size */
+  margin: 0 15px; /* Add space between links */
+}
+
+/* Change link color on hover */
+nav a:hover {
+  color: #f0f0f0; /* Lighter color on hover */
+  text-decoration: underline; /* Underline text on hover */
+}

@@ -1,0 +1,61 @@
+.primary {
+  background-color: #002855;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 0.25fr repeat(5, 1fr) 0.25fr; /* Creates side margins and main columns */
+  grid-template-rows: 0.25fr repeat(5, 1fr) 0.25fr; /* Uniform row sizes */
+  gap: 10px; /* Spacing between grid items */
+  height: 100vh; /* Fills viewport height */
+  color: white; /* Text color */
+}
+
+.plans-container {
+  grid-column: 2 / 7; /* Spans columns 3, 4, and 5 */
+  grid-row: 1 / 7; /* Spans rows 1 to 6 */
+  display: grid; /* Allows for internal grid layout */
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns internally */
+  grid-template-rows: 1fr; /* Two rows, second row smaller */
+  border-radius: 1rem; /* Rounded corners */
+  margin: 10px 0; /* Vertical spacing */
+  background-color: #333; /* Background color */
+  width: 100%; /* Ensure full width of grid cell */
+  gap: 10px;
+  padding: 10px;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  background-color: grey;
+  padding: 1rem;
+  justify-content: flex-start; /* Align items at the top initially */
+  align-items: center;
+  border-radius: 1rem;
+  height: 100%; /* Ensure plans have equal height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.plan:hover {
+  transform: scale(1.05); /* Slightly enlarges the plan container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow for emphasis */
+}
+.plan img {
+  width: 100%; /* Makes the image fill the available width */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: contain; /* Ensures the image stays inside the container without stretching */
+  border-radius: 1rem; /* Optional: makes the image corners rounded */
+}
+
+.button-box {
+  margin-top: auto; /* Pushes the button-box to the bottom */
+  width: 100%; /* Ensures the button-box stretches across the parent container */
+  display: flex;
+  justify-content: center;
+}
+
+.button-box Button {
+  width: 100%; /* Makes the Button fill the width of the button-box */
+  text-align: center; /* Centers the text inside the button */
+}

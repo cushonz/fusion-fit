@@ -1,0 +1,18 @@
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  justify-content: center;
+  padding: 10px;
+}
+
+.form-border {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: grey;
+  border-radius: 0.25rem;
+  height: auto;
+  grid-column: 3;
+}
