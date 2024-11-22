@@ -30,16 +30,8 @@ body {
   );
 }
 
-.primary btn {
-  background-color: #002855;
-}
-
 .secondary {
   background-color: #f8f9fa;
-}
-
-.tertiary {
-  background-color: #f4f4f4;
 }
 
 .child {
