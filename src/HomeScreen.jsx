@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./styles/styles.css";
 import ImgSlide from "./ImgSlide"; // Correct default import
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,6 @@ function HomeScreen() {
   return (
     <div className="app-container">
       <div className="home-grid primary">
-
         <div className="slider">
           <ImgSlide />
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./plans.css";
+import "./styles/plans.css";
 import Button from "react-bootstrap/Button";
 import bronze from "./images/Bronze.webp";
 import silver from "./images/Silver.webp";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./join.css";
+import "./styles/join.css";
 import SignUpForm from "./Form";
 
 function Join() {
