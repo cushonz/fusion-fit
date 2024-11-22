@@ -4,9 +4,8 @@
   grid-template-columns: 1fr; /* One column for smaller screens */
   gap: 10px;
   color: white;
-  height: 100vh; /* Ensure full viewport height */
+  height: auto; /* Ensure full viewport height */
   padding: 10px; /* Add padding to avoid touching edges */
-  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .plans-container {
@@ -19,17 +18,18 @@
 .plan {
   display: flex;
   flex-direction: column;
-  background: rgb(73,77,94);
-  background: radial-gradient(circle, rgba(73,77,94,1) 0%, rgba(41,45,64,1) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(73, 77, 94, 1) 0%,
+    rgba(41, 45, 64, 1) 70%
+  );
   padding: 1rem;
   border-radius: 1rem;
-  height: 100%; /* Ensure the plan takes full height */
+  height: 100%; /* Adjust as necessary */
+  width: 100%; /* Adjust as necessary */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   animation: fallIn 0.5s ease-out forwards;
-  width: 100%; /* Ensure the plan takes full width */
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start; /* Align items at the top */
   box-sizing: border-box; /* Prevent overflow issues */
 }

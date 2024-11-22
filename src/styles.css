@@ -22,7 +22,12 @@ body {
 /* Background gradient */
 .primary {
   background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(86, 86, 120, 1) 58%, rgba(2, 0, 36, 1) 92%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(86, 86, 120, 1) 58%,
+    rgba(2, 0, 36, 1) 92%
+  );
 }
 
 .primary btn {
@@ -72,8 +77,6 @@ body {
   padding: 0;
   height: 100%;
 }
-
-
 
 /* Responsive layout adjustments */
 @media (max-width: 768px) {
