@@ -1,66 +1,78 @@
-
-
+/* Main container with better grid for mobile responsiveness */
 .main-container {
   display: grid;
-  grid-template-columns: 0.25fr repeat(5, 1fr) 0.25fr; /* Creates side margins and main columns */
-  grid-template-rows: 0.25fr repeat(5, 1fr) 0.25fr; /* Uniform row sizes */
-  gap: 10px; /* Spacing between grid items */
-  height: 100vh; /* Fills viewport height */
-  color: white; /* Text color */
+  grid-template-columns: 1fr; /* One column for smaller screens */
+  gap: 10px;
+  color: white;
+  height: 100vh; /* Ensure full viewport height */
+  padding: 10px; /* Add padding to avoid touching edges */
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .plans-container {
-  grid-column: 2 / 7; /* Spans columns 3, 4, and 5 */
-  grid-row: 1 / 7; /* Spans rows 1 to 6 */
-  display: grid; /* Allows for internal grid layout */
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns internally */
-  grid-template-rows: 1fr; /* Two rows, second row smaller */
-  border-radius: 1rem; /* Rounded corners */
-  margin: 10px 0; /* Vertical spacing */
-
-  width: 100%; /* Ensure full width of grid cell */
-  gap: 10px;
-  padding: 10px;
+  grid-column: 1; /* Full width on smaller screens */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 15px; /* Increase gap between plans for better spacing */
 }
 
 .plan {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column;
   background: rgb(73,77,94);
   background: radial-gradient(circle, rgba(73,77,94,1) 0%, rgba(41,45,64,1) 70%);
   padding: 1rem;
-  justify-content: flex-start; /* Align items at the top initially */
-  align-items: center;
   border-radius: 1rem;
-  height: 100%; /* Ensure plans have equal height */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
-  opacity: 0; /* Hidden initially */
+  height: 100%; /* Ensure the plan takes full height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
   animation: fallIn 0.5s ease-out forwards;
-}
-
-.plan ul{
-  margin-top: 10px;
+  width: 100%; /* Ensure the plan takes full width */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  box-sizing: border-box; /* Prevent overflow issues */
 }
 
 .plan img {
-  width: 100%; /* Makes the image fill the available width */
-  height: auto; /* Maintains the aspect ratio */
-  object-fit: contain; /* Ensures the image stays inside the container without stretching */
-  border-radius: 1rem; /* Optional: makes the image corners rounded */
+  width: 100%; /* Full width of the container */
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+  margin-bottom: 1rem; /* Space between the image and list */
 }
 
-.button-box {
-  margin-top: auto; /* Pushes the button-box to the bottom */
-  width: 100%; /* Ensures the button-box stretches across the parent container */
-  display: flex;
-  justify-content: center;
+.plan ul {
+  margin-top: 10px;
+  padding-left: 1rem; /* Ensure text doesn't touch the left edge */
+  flex-grow: 1; /* Push button to the bottom */
 }
 
 .button-box Button {
-  width: 100%; /* Makes the Button fill the width of the button-box */
-  text-align: center; /* Centers the text inside the button */
+  width: 100%;
+  padding: 12px; /* Bigger button for better touch */
+  margin-top: auto; /* Push button to the bottom */
+  box-sizing: border-box; /* Prevent overflow issues */
 }
 
+/* Responsive layout for large screens and tablets */
+@media (min-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr 3fr 1fr; /* Side margins with content in the center */
+  }
+
+  .plans-container {
+    grid-column: 2 / 3; /* Centralize plans container */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns for large screens */
+  }
+
+  .plan {
+    /* Remove unnecessary height or max-height restrictions */
+    height: auto; /* Allow plans to adjust to content on desktop */
+  }
+}
+
+/* Animation */
 @keyframes fallIn {
   0% {
     transform: translateY(-100%);
@@ -71,4 +83,3 @@
     opacity: 1;
   }
 }
-
