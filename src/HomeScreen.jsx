@@ -9,6 +9,7 @@ function HomeScreen() {
   return (
     <div className="app-container">
       <div className="home-grid primary">
+
         <div className="slider">
           <ImgSlide />
         </div>

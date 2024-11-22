@@ -13,17 +13,17 @@ body {
 .home-grid {
   display: grid;
   grid-template-columns: 0.2fr repeat(5, 1fr) 0.2fr;
-  grid-template-rows: .8fr;
+  grid-template-rows: auto;
   min-height: 100vh;
   gap: 10px;
   margin-top: 10px;
 }
 
+/* Background gradient */
 .primary {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,86,120,1) 58%, rgba(2,0,36,1) 92%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(86, 86, 120, 1) 58%, rgba(2, 0, 36, 1) 92%);
 }
-
 
 .primary btn {
   background-color: #002855;
@@ -42,24 +42,27 @@ body {
   width: 50px;
 }
 
+/* Slider styles */
 .slider {
   grid-column: 2 / 7;
   grid-row: 1;
   overflow: hidden;
 }
 
-.slider img{
+.slider img {
   border-radius: 1rem;
+  width: 100%; /* Ensure the image takes full width of the slider */
+  height: auto;
 }
 
-
-.info-block{
+/* Info block styles */
+.info-block {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   grid-row: 2;
-  grid-column: 2/7;
+  grid-column: 2 / 7;
   padding: 10px;
   border-radius: 0.25rem;
 }
@@ -68,4 +71,74 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  /* For mobile devices */
+  .home-grid {
+    grid-template-columns: 1fr; /* Stack all content in a single column */
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .slider {
+    grid-column: 1 / 2; /* Make slider take full width on mobile */
+    grid-row: 1;
+  }
+
+  .info-block {
+    grid-column: 1 / 2; /* Make info block take full width */
+    padding: 15px;
+  }
+
+  /* Adjust button size for mobile */
+  .primary button {
+    width: 100%;
+    padding: 15px; /* Larger buttons for better touch on mobile */
+    font-size: 16px; /* Ensure the button text is readable */
+  }
+
+  /* Adjust text size for readability */
+  .info-block h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .info-block p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 769px) {
+  .home-grid {
+    grid-template-columns: 0.2fr repeat(5, 1fr) 0.2fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .info-block {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .primary button {
+    width: auto;
+    padding: 12px 20px;
+  }
+
+  /* Make text larger for desktop */
+  .info-block h1 {
+    font-size: 32px;
+  }
+
+  .info-block p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
 }
